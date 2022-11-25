@@ -3,6 +3,12 @@ const Controller = {
     ev.preventDefault();
     const form = document.getElementById("form");
     const data = Object.fromEntries(new FormData(form));
+  
+    if(!data.query || data.query == "") {
+      alert("Please introduce a word");
+      return;
+    }
+
     Controller.setLoading();
 
     const response = fetch(`/search?q=${data.query}`).then((response) => {
