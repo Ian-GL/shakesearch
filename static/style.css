@@ -169,6 +169,21 @@ textarea {
   clear: both;
 }
 
+.container {
+  margin: auto;
+  position: relative;
+  background-color: #F1EFE3;
+  font-family: "Nunito, sans-serif";
+}
+
+button {
+  font-family: "Nunito, sans-serif";
+}
+
+input {
+  font-family: "Nunito, sans-serif";
+}
+
 /* ==========================================================================
      EXAMPLE Media Queries for Responsive Design.
      These examples override the primary ('mobile first') styles.

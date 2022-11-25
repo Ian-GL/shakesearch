@@ -3,24 +3,59 @@
 
 <head>
   <meta charset="utf-8">
-  <title>ShakeSearch</title>
+  <title>ShakeSearch · Ian Gonzalez</title>
+  <meta
+    content="ShakeSearch allows you to search any text in the Complete Works of The Bard."
+    name="description" />
+  <meta content="ShakeSearch | Discover what Shakespeare said" property="og:title" />
+  <meta
+    content="ShakeSearch allows you to search any text in the Complete Works of The Bard."
+    property="og:description" />
+  <meta content="https://s3.amazonaws.com/testbucket.iangl/shakesearch_rounded.png"
+    property="og:image" />
+  <meta content="ShakeSearch | Discover what Shakespeare said" property="twitter:title" />
+  <meta
+    content="ShakeSearch allows you to search any text in the Complete Works of The Bard."
+    property="twitter:description" />
+  <meta content="https://s3.amazonaws.com/testbucket.iangl/shakesearch_rounded.png"
+    property="twitter:image" />
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" href="https://s3.amazonaws.com/testbucket.iangl/shakesearch_rounded.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="https://s3.amazonaws.com/testbucket.iangl/shakesearch_rounded.png" sizes="32x32">
   <meta name="theme-color" content="#fafafa">
 </head>
 
-<body>
-    <p>
-        <form id="form">
-            <label for="query">Query</label>
-            <input type="text" id="query" name="query">
-            <button type="submit">Search</button>
-        </form>
-    </p>
-    <p>
-        <table id="table">
-          <tbody id="table-body"></tbody>
-        </table>
-    </p>
+<body class="font-sans container max-w-5xl">
+  <section class="my-10 md:my-20 flex justify-center">
+    <div class="flex flex-col items-center">
+      <div class="flex items-center">
+        <img class="rounded-full w-24 h-24" src="https://s3.amazonaws.com/testbucket.iangl/shakesearch_logo_2.png"/>
+        <h1 class="text-4xl ml-8 text-orange-400 vertical-center" style="font-family: Paytone One, sans-serif;">shakesearch</h1>
+      </div>
+      <form id="form" class="mt-10">
+        <label for="query" class="sr-only">Query</label>
+        <input
+          class="rounded-full h-10 w-72 mr-4 px-4 border-2 border-orange-200 focus:outline-orange-300 focus:border-orange-300 shadow-none"
+          type="text" id="query" name="query"
+        >
+        <button class="rounded-full h-10 bg-orange-400 text-white px-4 text-lg focus:outline-pink-800" type="submit">Search</button>
+      </form>
+      <div id="quotes-container" class="mt-10" style="font-family: Source Sans Pro, sans-serif">
+        <div class="text-center" style="font-family: Paytone One, sans-serif;">
+          <p>
+            Discover what the Bard wrote about any topic.
+          </p>
+          <p>
+            Write a word or phrase and we'll dive into the complete works of Shakespeare to find it.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
   <script src="app.js"></script>
 </body>
 
