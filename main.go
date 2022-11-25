@@ -34,22 +34,22 @@ func main() {
 
 type WorkData struct {
 	FileName string
-	Title string
-	Type string
+	Title    string
+	Type     string
 }
 
 type Searcher struct {
-	FileName string
-	SuffixArray   *suffixarray.Index
-	Title string
-	Type string
-	Work string
+	FileName    string
+	SuffixArray *suffixarray.Index
+	Title       string
+	Type        string
+	Work        string
 }
 
 type SearchResult struct {
 	Results []string
-	Title string
-	Type string
+	Title   string
+	Type    string
 }
 
 var worksData = [...]WorkData{
@@ -108,7 +108,7 @@ func loadSearchers() []Searcher {
 			log.Fatal(err)
 		} else {
 			searchers = append(searchers, s)
-		}		
+		}
 	}
 
 	return searchers
@@ -125,7 +125,7 @@ func handleSearch(searchers []Searcher) func(w http.ResponseWriter, r *http.Requ
 		lowercaseQuery := strings.ToLower(query[0])
 
 		results := []SearchResult{}
-		
+
 		for _, s := range searchers {
 			s.Search(lowercaseQuery)
 			quotes := s.Search(lowercaseQuery)
@@ -135,7 +135,7 @@ func handleSearch(searchers []Searcher) func(w http.ResponseWriter, r *http.Requ
 				results = append(results, res)
 			}
 		}
-		
+
 		buf := &bytes.Buffer{}
 		enc := json.NewEncoder(buf)
 		err := enc.Encode(results)
